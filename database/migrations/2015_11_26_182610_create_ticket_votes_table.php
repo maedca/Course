@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTicketsTable extends Migration
+class CreateTicketVotesTable extends Migration
 {
 
     /**
@@ -13,14 +13,14 @@ class CreateTicketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickets', function (Blueprint $table) {
+        Schema::create('ticket_votes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 200);
-            $table->enum('status', ['open', 'closed']);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->timestamps();
-        });
+            $table->integer('ticket_id')->unsigned();
+            $table->foreign('ticket_id')->references('id')->on('tickets');
+			$table->timestamps();
+		});
     }
 
     /**
@@ -30,7 +30,7 @@ class CreateTicketsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tickets');
+        Schema::drop('ticket_votes');
     }
 
 }
