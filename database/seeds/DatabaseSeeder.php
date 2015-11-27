@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,8 +15,36 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
+        $this->truncatesTables(array(
+            'users',
+            'password_resets',
+            'tickets',
+            'ticket_votes',
+            'ticket_comment'
+        ));
 
       $this->call('UserTableSeeder');
     }
 
+    public function truncatesTables(array $tables)
+    {
+        $this->checkForeignKeys(false);
+
+
+        foreach ($tables as $table) {
+            DB::table($table)->truncate();
+        }
+
+        DB::table('users')->truncate(true);
+
 }
+
+    public function checkForeignKeys($check)
+    {
+        $check = $check ? '1' : '0';
+        DB::statement("SET FOREIGN_KEY_CHECKS = $check;");//se usa para elimianr la constraing de llaves primarias
+    }
+
+}
+  
+
