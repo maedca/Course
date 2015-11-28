@@ -20,10 +20,11 @@ class DatabaseSeeder extends Seeder
             'password_resets',
             'tickets',
             'ticket_votes',
-            'ticket_comment'
+            'ticket_comments'
         ));
 
-      $this->call('UserTableSeeder');
+        $this->call('UserTableSeeder');
+        $this->call('TicketTableSeeder');
     }
 
     public function truncatesTables(array $tables)
@@ -37,7 +38,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('users')->truncate(true);
 
-}
+    }
 
     public function checkForeignKeys($check)
     {
