@@ -30,8 +30,8 @@ class TicketTableSeeder extends BaseSeeder
         ];
     }
 
-    public function run()
-    {
-        $this->createMultiple(50);
-    }
+//    public function run()
+//    {
+//        $this->createMultiple(50);
+//    }
 }

@@ -1,11 +1,7 @@
 <?php
-
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
-class CreateTicketCommentsTable extends Migration
-{
-
+class CreateTicketCommentsTable extends Migration {
     /**
      * Run the migrations.
      *
@@ -13,7 +9,8 @@ class CreateTicketCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ticket_comments', function (Blueprint $table) {
+        Schema::create('ticket_comments', function(Blueprint $table)
+        {
             $table->increments('id');
             $table->mediumText('comment');
             $table->string('link')->nullable();
@@ -24,7 +21,6 @@ class CreateTicketCommentsTable extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -34,5 +30,4 @@ class CreateTicketCommentsTable extends Migration
     {
         Schema::drop('ticket_comments');
     }
-
 }
