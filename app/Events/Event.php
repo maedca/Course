@@ -1,8 +1,8 @@
-<?php namespace TeachMe\Events;
+<?php
+
+namespace TeachMe\Events;
 
 abstract class Event
 {
-
     //
-
 }

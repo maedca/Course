@@ -1,8 +1,9 @@
-<?php namespace TeachMe\Http\Controllers;
+<?php
+
+namespace TeachMe\Http\Controllers;
 
 class HomeController extends Controller
 {
-
     /*
     |--------------------------------------------------------------------------
     | Home Controller
@@ -16,8 +17,6 @@ class HomeController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -33,5 +32,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
 }

@@ -1,4 +1,6 @@
-<?php namespace TeachMe\Http\Controllers\Auth;
+<?php
+
+namespace TeachMe\Http\Controllers\Auth;
 
 use TeachMe\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
@@ -7,7 +9,6 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller
 {
-
     /*
     |--------------------------------------------------------------------------
     | Password Reset Controller
@@ -24,9 +25,8 @@ class PasswordController extends Controller
     /**
      * Create a new password controller instance.
      *
-     * @param  \Illuminate\Contracts\Auth\Guard $auth
-     * @param  \Illuminate\Contracts\Auth\PasswordBroker $passwords
-     * @return void
+     * @param \Illuminate\Contracts\Auth\Guard          $auth
+     * @param \Illuminate\Contracts\Auth\PasswordBroker $passwords
      */
     public function __construct(Guard $auth, PasswordBroker $passwords)
     {
@@ -35,5 +35,4 @@ class PasswordController extends Controller
 
         $this->middleware('guest');
     }
-
 }

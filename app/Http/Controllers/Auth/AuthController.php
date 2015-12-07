@@ -1,4 +1,6 @@
-<?php namespace TeachMe\Http\Controllers\Auth;
+<?php
+
+namespace TeachMe\Http\Controllers\Auth;
 
 use TeachMe\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
@@ -7,7 +9,6 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AuthController extends Controller
 {
-
     /*
     |--------------------------------------------------------------------------
     | Registration & Login Controller
@@ -24,9 +25,8 @@ class AuthController extends Controller
     /**
      * Create a new authentication controller instance.
      *
-     * @param  \Illuminate\Contracts\Auth\Guard $auth
-     * @param  \Illuminate\Contracts\Auth\Registrar $registrar
-     * @return void
+     * @param \Illuminate\Contracts\Auth\Guard     $auth
+     * @param \Illuminate\Contracts\Auth\Registrar $registrar
      */
     public function __construct(Guard $auth, Registrar $registrar)
     {
@@ -35,5 +35,4 @@ class AuthController extends Controller
 
         $this->middleware('guest', ['except' => 'getLogout']);
     }
-
 }

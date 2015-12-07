@@ -1,11 +1,12 @@
-<?php namespace TeachMe\Http\Middleware;
+<?php
+
+namespace TeachMe\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
 class Authenticate
 {
-
     /**
      * The Guard implementation.
      *
@@ -16,8 +17,7 @@ class Authenticate
     /**
      * Create a new filter instance.
      *
-     * @param  Guard $auth
-     * @return void
+     * @param Guard $auth
      */
     public function __construct(Guard $auth)
     {
@@ -27,8 +27,9 @@ class Authenticate
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Closure $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)
@@ -43,5 +44,4 @@ class Authenticate
 
         return $next($request);
     }
-
 }
