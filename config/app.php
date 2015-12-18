@@ -137,6 +137,12 @@ return [
         'Illuminate\View\ViewServiceProvider',
 
         /*
+         * laravel collective
+         *
+         * */
+        'Collective\Html\HtmlServiceProvider',
+
+        /*
          * Application Service Providers...
          */
         'TeachMe\Providers\AppServiceProvider',
@@ -144,6 +150,10 @@ return [
         'TeachMe\Providers\ConfigServiceProvider',
         'TeachMe\Providers\EventServiceProvider',
         'TeachMe\Providers\RouteServiceProvider',
+
+
+
+
 
     ],
 
@@ -192,6 +202,9 @@ return [
         'URL' => 'Illuminate\Support\Facades\URL',
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
+
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
