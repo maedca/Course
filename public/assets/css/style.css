@@ -5636,7 +5636,7 @@ button.close {
   .hidden-print {
     display: none !important; } }
 body {
-  padding-top: 0px !important;
+  padding-top: 0 !important;
   font-size: 16px;
   line-height: 170%;
   font-family: "Open Sans", sans-serif;
@@ -5683,7 +5683,7 @@ h3 {
   height: 50px;
   padding: 0;
   text-indent: -9999px;
-  background: url("../img/1423519219laravel-l-slant.png") no-repeat;
+  background: url("../img/laravel.png") no-repeat;
   background-size: auto 50px;
   -webkit-background-size: auto 50px; }
 
