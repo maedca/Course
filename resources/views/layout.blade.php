@@ -40,7 +40,12 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-{!! Html::menu() !!}
+{!! Html::menu(array(
+    'tickets.latest' => 'Recientes',
+    'tickets.popular' => 'Populares',
+    'tickets.open' => 'Abiertas',
+    'tickets.closed' => 'Finalizadas'
+)) !!}
 
 
                     <ul class="nav navbar-nav navbar-right">

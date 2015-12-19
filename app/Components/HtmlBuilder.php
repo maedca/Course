@@ -11,8 +11,8 @@ use Collective\Html\HtmlBuilder as CollectiveHtmlBuilder;
 
 class HtmlBuilder extends CollectiveHtmlBuilder
 {
-    public static function menu()
+    public static function menu( array $items)
     {
-        return view('partials/menu');
+        return view('partials/menu', compact('items'));
     }
 }
