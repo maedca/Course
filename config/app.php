@@ -140,7 +140,8 @@ return [
          * laravel collective
          *
          * */
-        'Collective\Html\HtmlServiceProvider',
+       //---->>>> 'Collective\Html\HtmlServiceProvider',
+        'TeachMe\Providers\HtmlServiceProvider',//mi propio provider
 
         /*
          * Application Service Providers...
